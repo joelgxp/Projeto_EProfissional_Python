@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card card-primary">
+    <div class="card-header">
+        <div class="card-title">
+            {% if request.resolver_match.url_name == 'cadastrar-usuario' %}
+                Cadastro de usuário
+            {% else %}
+                Edição de usuário
+            {% endif %}
+        </div>
+    </div>
+    <div class="card-body">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form_usuario.as_p }}
+            <button class="btn btn-primary" type="submit">Salvar</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

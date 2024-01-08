@@ -1,0 +1,39 @@
+{% extends 'adminlte/lib/_main_sidebar.html' %}
+
+
+{% block logo_text %}
+<span class="brand-text font-weight-light">Administração</span>
+{% endblock logo_text %}
+
+{% block nav_heading %}
+Links Navegacao
+{% endblock nav_heading %}
+
+{% block nav_links %}
+<li class="nav-item">
+    <a href="/administracao/servicos/cadastrar" class="nav-link">
+        <i class="far fa-user nav-icon"></i>
+        <p>Cadastrar Serviço</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="/administracao/servicos/listar" class="nav-link">
+        <i class="far fa-user nav-icon"></i>
+        <p>Listar Serviços</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/administracao/usuarios/cadastrar" class="nav-link">
+        <i class="far fa-user nav-icon"></i>
+        <p>Cadastrar Usuário</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="/administracao/usuarios/listar" class="nav-link">
+        <i class="far fa-user nav-icon"></i>
+        <p>Listar Usuários</p>
+    </a>
+</li>
+
+{% endblock nav_links %}

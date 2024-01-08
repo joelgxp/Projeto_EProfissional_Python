@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Listagem de Serviços
+{% endblock title %}
+
+{% block content%}
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Listagem de Serviços</h3>
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Valor Minimo</th>
+                    <th>Qtd. Horas</th>
+                    <th>Porcentagem Comissão</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for servico in servicos %}
+                <tr>
+                    <td>{{ servico.id }}</td>
+                    <td>{{ servico.nome }}</td>
+                    <td>{{ servico.valor_minimo }}</td>
+                    <td>{{ servico.qtd_horas }}</td>
+                    <td>{{ servico.porcentagem_comissao }}</td>
+                    <td><a href="/administracao/servicos/editar/{{ servico.id }}">Editar</a> | <a href="/administracao/servicos/apagar/{{ servico.id }}">Apagar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% endblock content %}

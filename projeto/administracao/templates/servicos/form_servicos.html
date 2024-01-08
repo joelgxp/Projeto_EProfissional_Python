@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Cadastrar Serviço
+{% endblock title %}
+
+{% block content%}
+<div class="card card-primary">
+    <div class="card-header">
+        <div class="card-title">Cadastro de Serviços</div>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            {{ form_servico.as_p }}
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
