@@ -1,4 +1,3 @@
-from typing import Any
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth import get_user_model
 
@@ -6,9 +5,9 @@ class CadastroUsuarioForm(UserCreationForm):
 
     class Meta:
         model = get_user_model()
-        fields = ['first_name', 'email', 'password1', 'password2']
+        fields = ['username', 'first_name', 'email', 'password1', 'password2']
         
-    def save(self, commit: True):
+    def save(self, commit=True):
         user = super(UserCreationForm, self).save(commit=False)
         user.is_superuser = True
         user.set_password(self.cleaned_data["password1"])
