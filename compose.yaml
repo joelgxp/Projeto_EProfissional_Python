@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  django_gunicorn:
+    volumes:
+      - static:/app/static
+    build:
+      context: .
+    image: joelgxp/eprofissionais-django:0.0.1
+    ports:
+      - 8000:8000
+
+  nginx:
+    build: ./nginx
+    image: joelgxp/eprofissionais-nginx:0.0.1
+    volumes:
+      - static:/static
+    ports:
+      - 80:80
+    depends_on:
+      - django_gunicorn
+
+volumes:
+  static:
