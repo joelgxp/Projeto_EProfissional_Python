@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-h*yz(7m)cn7nw7!#i6zfn#dh2t=0ue+kh)1v^lkn@szfo9763d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*', 'http://144.22.195.119', 'https://144.22.195.119', 'http://localhost', 'https://localhost']
 
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -125,6 +127,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATIC_ROOT = BASE_DIR / "static"
+
+STATICFILES_DIRS = [
+    BASE_DIR / "staticfiles",
+    "static/",
+]
 
 LOGIN_REDIRECT_URL = 'listar-servicos'
 
