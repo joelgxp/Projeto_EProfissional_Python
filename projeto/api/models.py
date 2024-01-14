@@ -1,4 +1,5 @@
 from django.db import models
+from .managers import profissional_manager
 
 import uuid
 import os
@@ -7,6 +8,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import validate_image_file_extension
 from localflavor.br.models import BRCPFField
+from django.contrib.auth.models import UserManager
 
 def nome_arquivo_foto(instance, filename):
     ext = filename.split('.')[-1]
@@ -22,10 +24,11 @@ def nome_arquivo_documento(instance, filename):
 
 class Usuario(AbstractUser):
     TIPO_USUARIO_CHOICES = (
-        (1, 'Profissional'),
-        (2, 'Cliente')
+        (1, "Cliente"),
+        (2, "Profissional")
     )
     
+    username = None
     nome_completo = models.CharField(max_length=200, null=True, blank=False)
     cpf = BRCPFField(null=True, unique=True, blank=False)
     nascimento = models.DateField(null=True, blank=False)
@@ -39,6 +42,9 @@ class Usuario(AbstractUser):
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ('nome_completo', 'cpf', 'celular', 'tipo_usuario', 'reputacao', 'chave_pix', 'foto_de_perfil', 'foto_documento', 'password', 'is_staff', 'is_superuser', 'is_active', 'tipo', 'data_nascimento', 'tipo', 'data_nascimento', 'tipo')
+    
+    objects = UserManager()    
+    profissional_object = profissional_manager.ProfissionalManager()
 
 class CidadesAtendimento(models.Model):
     codigo_ibge = models.IntegerField(null=False, blank=False)
