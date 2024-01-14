@@ -1,1 +1,2 @@
-*.pyc
+projeto/base/.env
+projeto/api/serializers/__pycache__/usuarios_serializer.cpython-312.pyc
