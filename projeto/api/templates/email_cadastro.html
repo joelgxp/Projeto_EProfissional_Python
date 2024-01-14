@@ -1,0 +1,90 @@
+<div>
+    <div>
+    <div>
+    <div marginwidth="0" marginheight="0" style="padding:0">
+    <div dir="ltr" style="background-color:#f7f7f7;margin:0;padding:70px 0;width:100%">
+    <table>
+    <tbody>
+    <tr>
+    <td>
+    <div></div>
+    <table>
+    <tbody>
+        <tr>
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td style="padding:36px 48px;display:block">
+                                <h1>Olá {{ usuario.nome_completo }} seja muito bem vindo ao E-diaristas.</h1>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td valign="top" style="background-color:#ffffff">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top" style="padding:48px 48px 32px">
+                                                <div>
+    
+                                                        {% if usuario.tipo_usuario == 1 %}
+                                                            <p style="margin:0 0 16px">Sua diária já foi enviada para o(a)s diaristas da sua região. Fique ligado, em breve te confirmaremos a profissional que te atenderá.</p>
+                                                            <p style="margin:0 0 16px">Pode ficar tranquilo, se nenhuma profissional aceitar seu serviço até 24 horas antes da data de agendamento cancelamos sua diária e liberamos o saldo no cartão de crédito.</p>
+                                                        {% else %}
+                                                            <p style="margin:0 0 16px">Fique ligado, assim que tivermos uma diária na sua região te avisaremos!</p>
+                                                            <p style="margin:0 0 16px">Você poderá escolher e se candidar a quantas diárias achar necessário.</p>
+                                                        {% endif %}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <table>
+    <tbody>
+        <tr>
+            <td valign="top" style="padding:0;border-radius:6px">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="2" valign="middle">
+                                <p style="margin:0 0 16px">E-Diaristas – Obrigado</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
