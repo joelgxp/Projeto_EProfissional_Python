@@ -7,9 +7,9 @@ def usuario_cadastrado(sender, instance, created, **kwargs):
     if created:
         assunto = 'Bem vindo'
         corpo_email = 'Seja bem vindo ao sistema'
-        email_destino = instance.email
-        email_remetente = 'DnF2r@example.com'
+        email_destino = [instance.email, ]
+        email_remetente = 'joel@joelsouza.com.br'
         mensagem_html = render_to_string('email_cadastro.html', {'usuario': instance})
         send_mail(assunto, corpo_email, email_remetente, email_destino, html_message=mensagem_html)
     
-post_save.connect(usuario_cadastrado, sender=Usuario)
+# post_save.connect(usuario_cadastrado, sender=Usuario)
