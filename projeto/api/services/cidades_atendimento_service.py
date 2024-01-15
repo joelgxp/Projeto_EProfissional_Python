@@ -22,7 +22,7 @@ def listar_prossionais_cidade(cep):
     codigo_ibge = buscar_cidades_cep(cep) ['ibge']
     try:
         cidade = CidadesAtendimento.objects.get(codigo_ibge=codigo_ibge)
-        return cidade.usuario.filter(tipo_usuario='L')
+        return cidade.usuario.filter(tipo_usuario=2)
     except CidadesAtendimento.DoesNotExist:
         return []
         
