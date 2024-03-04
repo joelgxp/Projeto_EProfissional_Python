@@ -30,7 +30,7 @@ DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*', 'http://144.22.195.119', 'https://144.22.195.119', 'http://localhost', 'https://localhost']
+CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*', 'http://138.59.239.153', 'https://138.59.239.153/', 'http://localhost', 'https://localhost', 'http://joelsouza.ddns.me', 'https://joelsouza.ddns.me']
 
 CORS_ALLOW_ALL_ORIGINS = True
 
